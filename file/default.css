@@ -8,7 +8,7 @@ background-repeat: no-repeat;
 transition: background-image 1s ease;
   font-size: 14px;
   font-family: sans-serif;
-  color: white;
+  color: #222222;
   overflow: auto;
 }
 a {
