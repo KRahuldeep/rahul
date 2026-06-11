@@ -530,4 +530,4 @@
     window.Point = Point;
     window.Tree = Tree;
 
-})(window);(i want to change love symbol to cake symbol)
+})(window);
