@@ -51,7 +51,7 @@
         }
     }
 
-    Cake = function() {
+   Love = function() {
     var points = [];
 
     // simple cake outline (rectangle style)
@@ -86,7 +86,7 @@
             point  : point,
             scale  : scale,
             color  : color,
-            figure : new Cake(),
+            figure : new Love(),
         }
 
         this.cirle = {
