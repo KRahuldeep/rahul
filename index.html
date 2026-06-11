@@ -176,6 +176,9 @@
             $await(moveAnimate());
             textAnimate().start();
         }));
+		setTimeout(function() {
+    document.body.style.backgroundImage = "url('img2.png')";
+}, 5000);
 
         runAsync().start();
     })();
