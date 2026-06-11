@@ -51,24 +51,19 @@
         }
     }
 
-   Love = function() {
-    var points = [];
-
-    // simple cake outline (rectangle style)
-    points.push(new Point(-30, -10));
-    points.push(new Point(30, -10));
-    points.push(new Point(30, 20));
-    points.push(new Point(-30, 20));
-
-    // top cream layer
-    points.push(new Point(-25, -20));
-    points.push(new Point(25, -20));
-    points.push(new Point(25, -10));
-    points.push(new Point(-25, -10));
-
-    this.points = points;
-    this.length = points.length;
-}
+    Heart = function() {
+        // x = 16 sin^3 t
+        // y = 13 cos t - 5 cos 2t - 2 cos 3t - cos 4t
+        // http://www.wolframalpha.com/input/?i=x+%3D+16+sin%5E3+t%2C+y+%3D+(13+cos+t+-+5+cos+2t+-+2+cos+3t+-+cos+4t)
+        var points = [], x, y, t;
+        for (var i = 10; i < 30; i += 0.2) {
+            t = i / Math.PI;
+            x = 16 * Math.pow(Math.sin(t), 3);
+            y = 13 * Math.cos(t) - 5 * Math.cos(2 * t) - 2 * Math.cos(3 * t) - Math.cos(4 * t);
+            points.push(new Point(x, y));
+        }
+        this.points = points;
+        this.length = points.length;
     }
     Heart.prototype = {
         get: function(i, scale) {
@@ -86,7 +81,7 @@
             point  : point,
             scale  : scale,
             color  : color,
-            figure : new Love(),
+            figure : new Heart(),
         }
 
         this.cirle = {
@@ -496,7 +491,6 @@
             if (s.scale > 1) {
                 s.tree.removeBloom(s);
             }
-            
         },
         draw: function() {
             var s = this, ctx = s.tree.ctx, figure = s.figure;
@@ -536,4 +530,4 @@
     window.Point = Point;
     window.Tree = Tree;
 
-})(window);
+})(window);(i want to change love symbol to cake symbol)
