@@ -51,7 +51,7 @@
         }
     }
 
-    Heart = function() {
+    Cake = function() {
         // x = 16 sin^3 t
         // y = 13 cos t - 5 cos 2t - 2 cos 3t - cos 4t
         // http://www.wolframalpha.com/input/?i=x+%3D+16+sin%5E3+t%2C+y+%3D+(13+cos+t+-+5+cos+2t+-+2+cos+3t+-+cos+4t)
@@ -81,7 +81,7 @@
             point  : point,
             scale  : scale,
             color  : color,
-            figure : new Heart(),
+            figure : new Cake(),
         }
 
         this.cirle = {
@@ -491,6 +491,7 @@
             if (s.scale > 1) {
                 s.tree.removeBloom(s);
             }
+            Heart = Cake;
         },
         draw: function() {
             var s = this, ctx = s.tree.ctx, figure = s.figure;
